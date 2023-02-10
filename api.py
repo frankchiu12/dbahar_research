@@ -1,4 +1,6 @@
 # The current version of the PatentsView API delivers data on patents granted through September 30, 2021.
+# limit
+# specific
 # 55BfVeBf.wTgKzKmlZb3fjZhBlDtLllhqBcbE6TRH
 # https://patentsview.org/apis/api-query-language
 
@@ -7,7 +9,6 @@ base_url = 'https://api.patentsview.org/patents/query?q='
 
 def query_helper(query, value):
     return '{"' + str(query) + '":"' + str(value) + '"},'
-
 
 def query(
     patent_number,
