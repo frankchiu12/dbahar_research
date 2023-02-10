@@ -2,15 +2,22 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('PatentsInventors.csv')
+df = pd.read_csv('PatentsInventors.csv', nrows=100)
 
 g = nx.Graph()
 
-g.add_edge(1, 2)
-g.add_edge(2, 3)
-g.add_edge(3, 4)
-g.add_edge(1, 4)
-g.add_edge(1, 5)
+counter = 0
+prev_id = None
+for id in df['inventor_id']:
+    if id not in df:
+        g.add_node(id, weight=1)
+    else:
+        g.node[id]["weight"] += 1
+    if counter > 1:
+        g.add_edge(prev_id, id)
+    prev_id = id
+    counter += 1
+    print(counter)
 
 nx.draw(g, with_labels = True)
 plt.savefig('graph.png')
