@@ -13,6 +13,7 @@ for country in df.inventor_iso2.unique():
         cut_length = sub_sub_df.shape[0]/10
         if cut_length == 0:
             continue
-        sub_sub_df = sub_sub_df.sort_values(by=['pri_time'])
-        sub_sub_df = sub_sub_df.head(cut_length)
-        sub_sub_df.to_csv('/users/schiu4/data/schiu4/segmented_data/' + country + '-' + technology + '.csv')
+        else:
+            sub_sub_df = sub_sub_df.sort_values(by=['pri_time'])
+            sub_sub_df = sub_sub_df.head(cut_length)
+            sub_sub_df.to_csv('/users/schiu4/data/schiu4/segmented_data/' + country + '-' + technology + '.csv')
