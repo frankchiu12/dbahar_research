@@ -1,3 +1,1 @@
 # same patent_id but different inventor_id
-
-# MY-F02F

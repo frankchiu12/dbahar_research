@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('PatentsInventors.csv', nrows=100)
+df = pd.read_csv('', nrows=100)
 
 g = nx.Graph()
 
