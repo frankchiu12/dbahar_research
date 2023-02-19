@@ -6,8 +6,6 @@ df = pd.read_csv('PatentsInventors.csv', nrows=100)
 
 g = nx.Graph()
 
-print(df['GMI1yr_prevexpabroad'])
-
 counter = 0
 prev_id = None
 for id in df['inventor_id']:
@@ -22,5 +20,3 @@ for id in df['inventor_id']:
 
 nx.draw(g, with_labels = True)
 plt.savefig('graph.png')
-
-# clean 
