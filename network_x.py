@@ -46,7 +46,7 @@ new_df['partner_count'] = partner_id_count_list
 
 new_df.to_csv(country_tech_url + '_network.csv', index=False)
 
-g = nx.Graph()
+g = nx.DiGraph()
 
 for inventor, partner in inventor_to_partner.items():
     g.add_node(inventor)
@@ -54,7 +54,8 @@ for inventor, partner in inventor_to_partner.items():
         g.add_node(part)
         g.add_edge(inventor, part)
 
-nx.draw(g, node_size=40, font_size=10, with_labels=True)
+plt.figure(figsize=(30,25))
+nx.draw(g, pos=nx.spiral_layout(g), node_size=100, edge_color=['red', 'green'], linewidths=10)
 plt.savefig('graph.png')
 
-# https://stackoverflow.com/questions/21978487/improving-python-networkx-graph-layout
+# random or spiral
