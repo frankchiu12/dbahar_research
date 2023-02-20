@@ -6,6 +6,7 @@ csv_url = 'US-G06F.csv'
 country_tech_url = csv_url.partition('.')[0]
 df = pd.read_csv(csv_url)
 new_df = pd.DataFrame()
+join_df = pd.read_csv(csv_url, usecols=['inventor_id', 'GMI1yr_prevexpabroad'])
 
 patent_to_inventor = {}
 inventor_to_patent = {}
@@ -14,6 +15,10 @@ inventor_to_partner = {}
 inventor_id_list = []
 global_partner_list = []
 partner_id_count_list = []
+deg_centrality_list = []
+close_centrality_list = []
+bet_centrality_list = []
+pr_list = []
 
 for index, row in df.iterrows():
     patent_id = row['patent_id']
@@ -44,8 +49,6 @@ new_df['inventor_id'] = inventor_id_list
 new_df['partner_list'] = global_partner_list
 new_df['partner_count'] = partner_id_count_list
 
-new_df.to_csv(country_tech_url + '_network.csv', index=False)
-
 g = nx.DiGraph()
 
 for inventor, partner in inventor_to_partner.items():
@@ -59,3 +62,22 @@ nx.draw(g, pos=nx.spiral_layout(g), node_size=100, edge_color=['red', 'green'], 
 plt.savefig('graph.png')
 
 # random or spiral
+
+deg_centrality = nx.degree_centrality(g)
+close_centrality = nx.closeness_centrality(g)
+bet_centrality = nx.betweenness_centrality(g, normalized = True, endpoints = False)
+pr = nx.pagerank(g, alpha = 0.8)
+
+for inventor_id in new_df['inventor_id']:
+    deg_centrality_list.append(deg_centrality[inventor_id])
+    close_centrality_list.append(close_centrality[inventor_id])
+    bet_centrality_list.append(bet_centrality[inventor_id])
+    pr_list.append(pr[inventor_id])
+
+new_df['deg_centrality'] = deg_centrality_list
+new_df['close_centrality'] = close_centrality_list
+new_df['bet_centrality'] = bet_centrality_list
+new_df['page_rank'] = pr_list
+new_df = new_df.join(join_df.set_index('inventor_id'), on = 'inventor_id')
+
+new_df.to_csv(country_tech_url + '_network.csv', index=False)
