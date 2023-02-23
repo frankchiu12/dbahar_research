@@ -92,3 +92,9 @@ new_df['page_rank'] = pr_list
 new_df = new_df.join(join_df.set_index('inventor_id'), on = 'inventor_id')
 
 new_df.to_csv(country_tech_url + '_network.csv', index=False)
+
+# centrality no GMIs/check bet and repeat values
+
+# no GMIs in partner list, centrality only for GMIs, with non-GMIs as 0
+
+# one big csv of by country and by tech centrality
