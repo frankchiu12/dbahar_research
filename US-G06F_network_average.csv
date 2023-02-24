@@ -1,0 +1,2 @@
+country,technology,partner_count_avg,deg_centrality_avg,close_centrality_avg,bet_centrality_avg,page_rank_avg,local_partner_count_avg,local_deg_centrality_avg,local_close_centrality_avg,local_bet_centrality_avg,local_page_rank_avg
+US,G06F,1.8775510204081634,0.007955724662746454,0.007955724662746454,0.0,0.0037132472692580597,0.4897959183673469,0.0020754064337599448,0.00423728813559322,0.0,0.0025378062401916882

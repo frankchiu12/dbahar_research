@@ -2,9 +2,12 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
+csv_url = 'US-G06F.csv'
+country_technology_url = csv_url.partition('.')[0]
+country = csv_url.partition('-')[0]
+technology = csv_url.partition('-')[2].partition('.')[0]
+
 def network_centrality_calculation(local):
-    csv_url = 'US-G06F.csv'
-    country_tech_url = csv_url.partition('.')[0]
     read_df = pd.read_csv(csv_url)
     data_df = pd.DataFrame()
 
@@ -23,7 +26,7 @@ def network_centrality_calculation(local):
     bet_centrality_list = []
     pr_list = []
 
-    for index, row in read_df.iterrows():
+    for _, row in read_df.iterrows():
         patent_id = row['patent_id']
         inventor_id = row['inventor_id']
         GMI_indicator = row['GMI1yr_prevexpabroad']
@@ -86,8 +89,6 @@ def network_centrality_calculation(local):
     else:
         plt.savefig('graph.png')
 
-    # random or spiral
-
     deg_centrality = nx.degree_centrality(g)
     close_centrality = nx.closeness_centrality(g)
     bet_centrality = nx.betweenness_centrality(g, normalized = True, endpoints = False)
@@ -106,20 +107,36 @@ def network_centrality_calculation(local):
     data_df['GMI1yr_prevexpabroad'] = GMI_indicator_list
 
     if local:
-        data_df.to_csv(country_tech_url + '_network_local.csv', index=False)
+        data_df.to_csv(country_technology_url + '_network_local.csv', index=False)
     else:
-        data_df.to_csv(country_tech_url + '_network.csv', index=False)
+        data_df.to_csv(country_technology_url + '_network.csv', index=False)
 
     # TODO: or is it just len(new_df)
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
-    GMI_only_partner_count_avg = only_GMI_df['partner_count'].sum() / len(only_GMI_df)
-    GMI_only_deg_centrality_avg = only_GMI_df['deg_centrality'].sum() / len(only_GMI_df)
-    GMI_only_close_centrality_avg = only_GMI_df['close_centrality'].sum() / len(only_GMI_df)
-    GMI_only_bet_centrality_avg = only_GMI_df['bet_centrality'].sum() / len(only_GMI_df)
-    GMI_only_page_rank_avg = only_GMI_df['page_rank'].sum() / len(only_GMI_df)
+    partner_count_avg = only_GMI_df['partner_count'].sum() / len(only_GMI_df)
+    deg_centrality_avg = only_GMI_df['deg_centrality'].sum() / len(only_GMI_df)
+    close_centrality_avg = only_GMI_df['close_centrality'].sum() / len(only_GMI_df)
+    bet_centrality_avg = only_GMI_df['bet_centrality'].sum() / len(only_GMI_df)
+    page_rank_avg = only_GMI_df['page_rank'].sum() / len(only_GMI_df)
 
-    return GMI_only_partner_count_avg, GMI_only_deg_centrality_avg, GMI_only_close_centrality_avg, GMI_only_bet_centrality_avg, GMI_only_page_rank_avg
+    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg]
 
-network_centrality_calculation(True)
-network_centrality_calculation(False)
+local_list = network_centrality_calculation(True)
+non_local_list = network_centrality_calculation(False)
+
+avg_data_df = pd.DataFrame()
+avg_data_df['country'] = [country]
+avg_data_df['technology'] = [technology]
+avg_data_df['partner_count_avg'] = [non_local_list[0]]
+avg_data_df['deg_centrality_avg'] =[non_local_list[1]]
+avg_data_df['close_centrality_avg'] = [non_local_list[2]]
+avg_data_df['bet_centrality_avg'] = [non_local_list[3]]
+avg_data_df['page_rank_avg'] = [non_local_list[4]]
+avg_data_df['local_partner_count_avg'] = [local_list[0]]
+avg_data_df['local_deg_centrality_avg'] = [local_list[1]]
+avg_data_df['local_close_centrality_avg'] = [local_list[2]]
+avg_data_df['local_bet_centrality_avg'] = [local_list[3]]
+avg_data_df['local_page_rank_avg'] = [local_list[4]]
+
+avg_data_df.to_csv(country_technology_url + '_network_average.csv', index=False)
