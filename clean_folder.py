@@ -1,7 +1,7 @@
 import os
 import shutil
 
-path = '/users/schiu4/data/schiu4/segmented_data'
+path = '/gpfs/home/schiu4/segmented_data/'
 
 for x in os.listdir(path):
     file = os.path.join(path, x)

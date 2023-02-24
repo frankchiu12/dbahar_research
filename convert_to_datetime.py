@@ -5,7 +5,7 @@ from datetime import datetime
 # reload(sys)
 sys.setdefaultencoding('utf8')
 
-df = pd.read_csv('/users/schiu4/data/schiu4/PatentsInventorsDroppedNAN.csv', dtype={'year': str, 'month': str, 'day': str, 'GMI1yr_prevexpabroad': str})
+df = pd.read_csv('/gpfs/home/schiu4/PatentsInventorsDroppedNAN.csv', dtype={'year': str, 'month': str, 'day': str, 'GMI1yr_prevexpabroad': str})
 
 def drop_decimal(string_to_drop):
 	return string_to_drop.partition('.0')[0]
@@ -25,4 +25,4 @@ pd.to_datetime(df['time'], format='%Y/%m/%d')
 
 df = df.drop(['year', 'month', 'day', 'Unnamed: 0.1', 'Unnamed: 0'], axis=1)
 
-df.to_csv('PatentsInventorsTimed.csv', index=False)
+df.to_csv('/gpfs/home/schiu4/PatentsInventorsTimed.csv', index=False)

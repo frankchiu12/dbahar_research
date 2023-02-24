@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-csv_url = 'US-G06F.csv'
+csv_url = 'TW-C07C.csv'
 country_tech_url = csv_url.partition('.')[0]
 country = csv_url.partition('-')[0]
 tech = csv_url.partition('-')[2].partition('.')[0]
@@ -16,7 +16,6 @@ def network_centrality_calculation(local):
     inventor_to_partner = {}
     inventor_to_indicator = {}
 
-    inventor_list = []
     global_partner_list = []
     partner_count_list = []
     GMI_indicator_list = []
