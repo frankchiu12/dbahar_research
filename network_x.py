@@ -6,16 +6,16 @@ csv_url = 'US-G06F.csv'
 country_tech_url = csv_url.partition('.')[0]
 df = pd.read_csv(csv_url)
 new_df = pd.DataFrame()
-join_df = pd.read_csv(csv_url, usecols=['inventor_id', 'GMI1yr_prevexpabroad'])
+join_df = pd.read_csv(csv_url, usecols=['inventor_id', 'GMI1yr_prevexpabroad']) #TODO: why?
 
 patent_to_inventor = {}
 inventor_to_patent = {}
 inventor_to_partner = {}
 inventor_to_indicator = {}
 
-inventor_id_list = []
+inventor_list = []
 global_partner_list = []
-partner_id_count_list = []
+partner_count_list = []
 color_list = []
 deg_centrality_list = []
 close_centrality_list = []
@@ -40,23 +40,27 @@ for index, row in df.iterrows():
         inventor_to_indicator[inventor_id] = row['GMI1yr_prevexpabroad']
 
 for inventor, patent in inventor_to_patent.items():
-    inventor_id_list.append(inventor)
     if inventor not in inventor_to_partner:
         inventor_to_partner[inventor] = []
         for pat in patent:
             partner_list = patent_to_inventor[pat]
             partner_list = [x for x in partner_list if x != inventor]
             inventor_to_partner[inventor] += partner_list
+            inventor_to_partner[inventor] = list(set(inventor_to_partner[inventor]))
         global_partner_list.append(inventor_to_partner[inventor])
-        partner_id_count_list.append(len(inventor_to_partner[inventor]))
+        partner_count_list.append(len(inventor_to_partner[inventor]))
 
-new_df['inventor_id'] = inventor_id_list
+inventor_list = inventor_to_patent.keys()
+
+new_df['inventor_id'] = inventor_list
 new_df['partner_list'] = global_partner_list
-new_df['partner_count'] = partner_id_count_list
+new_df['partner_count'] = partner_count_list
 
-g = nx.DiGraph()
+g = nx.Graph()
 
 for inventor, partner in inventor_to_partner.items():
+    if inventor == '4750112-2':
+        print(partner)
     g.add_node(inventor)
     for part in partner:
         g.add_node(part)
@@ -89,12 +93,11 @@ new_df['deg_centrality'] = deg_centrality_list
 new_df['close_centrality'] = close_centrality_list
 new_df['bet_centrality'] = bet_centrality_list
 new_df['page_rank'] = pr_list
+join_df = join_df.drop_duplicates()
 new_df = new_df.join(join_df.set_index('inventor_id'), on = 'inventor_id')
 
 new_df.to_csv(country_tech_url + '_network.csv', index=False)
 
 # centrality no GMIs/check bet and repeat values
-
 # no GMIs in partner list, centrality only for GMIs, with non-GMIs as 0
-
 # one big csv of by country and by tech centrality
