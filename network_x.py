@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-csv_url = 'TW-C07C.csv'
+csv_url = 'CN-B23K.csv'
 country_tech_url = csv_url.partition('.')[0]
 country = csv_url.partition('-')[0]
 tech = csv_url.partition('-')[2].partition('.')[0]

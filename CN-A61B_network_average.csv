@@ -1,0 +1,2 @@
+country,technology,partner_count_avg,deg_centrality_avg,close_centrality_avg,bet_centrality_avg,page_rank_avg,local_partner_count_avg,local_deg_centrality_avg,local_close_centrality_avg,local_bet_centrality_avg,local_page_rank_avg
+CN,A61B,0.7142857142857143,0.0037792894935752075,0.0037792894935752075,0.0,0.0038655462184899814,0.42857142857142855,0.0022675736961451248,0.0022675736961451248,0.0,0.0025449609772664555
