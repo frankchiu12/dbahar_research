@@ -6,7 +6,7 @@ csv_url = 'US-G06F.csv'
 country_tech_url = csv_url.partition('.')[0]
 df = pd.read_csv(csv_url)
 new_df = pd.DataFrame()
-join_df = pd.read_csv(csv_url, usecols=['inventor_id', 'GMI1yr_prevexpabroad']) #TODO: why?
+join_df = pd.read_csv(csv_url, usecols=['inventor_id', 'GMI1yr_prevexpabroad'])
 
 patent_to_inventor = {}
 inventor_to_patent = {}
@@ -46,9 +46,11 @@ for inventor, patent in inventor_to_patent.items():
             partner_list = patent_to_inventor[pat]
             partner_list = [x for x in partner_list if x != inventor]
             inventor_to_partner[inventor] += partner_list
-            inventor_to_partner[inventor] = list(set(inventor_to_partner[inventor]))
-        global_partner_list.append(inventor_to_partner[inventor])
-        partner_count_list.append(len(inventor_to_partner[inventor]))
+
+for inventor, partner in inventor_to_partner.items():
+    inventor_to_partner[inventor] = list(set(partner))
+    global_partner_list.append(inventor_to_partner[inventor])
+    partner_count_list.append(len(inventor_to_partner[inventor]))
 
 inventor_list = inventor_to_patent.keys()
 
@@ -59,8 +61,6 @@ new_df['partner_count'] = partner_count_list
 g = nx.Graph()
 
 for inventor, partner in inventor_to_partner.items():
-    if inventor == '4750112-2':
-        print(partner)
     g.add_node(inventor)
     for part in partner:
         g.add_node(part)
@@ -98,6 +98,5 @@ new_df = new_df.join(join_df.set_index('inventor_id'), on = 'inventor_id')
 
 new_df.to_csv(country_tech_url + '_network.csv', index=False)
 
-# centrality no GMIs/check bet and repeat values
 # no GMIs in partner list, centrality only for GMIs, with non-GMIs as 0
 # one big csv of by country and by tech centrality
