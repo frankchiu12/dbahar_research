@@ -102,11 +102,18 @@ def network_centrality_calculation(csv_url, local):
     # TODO: or is it just len(new_df)
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
-    partner_count_avg = only_GMI_df['partner_count'].sum() / len(only_GMI_df)
-    deg_centrality_avg = only_GMI_df['deg_centrality'].sum() / len(only_GMI_df)
-    close_centrality_avg = only_GMI_df['close_centrality'].sum() / len(only_GMI_df)
-    bet_centrality_avg = only_GMI_df['bet_centrality'].sum() / len(only_GMI_df)
-    page_rank_avg = only_GMI_df['page_rank'].sum() / len(only_GMI_df)
+    if len(only_GMI_df) > 0:
+        partner_count_avg = only_GMI_df['partner_count'].sum() / len(only_GMI_df)
+        deg_centrality_avg = only_GMI_df['deg_centrality'].sum() / len(only_GMI_df)
+        close_centrality_avg = only_GMI_df['close_centrality'].sum() / len(only_GMI_df)
+        bet_centrality_avg = only_GMI_df['bet_centrality'].sum() / len(only_GMI_df)
+        page_rank_avg = only_GMI_df['page_rank'].sum() / len(only_GMI_df)
+    else:
+        partner_count_avg = 0
+        deg_centrality_avg = 0
+        close_centrality_avg = 0
+        bet_centrality_avg = 0
+        page_rank_avg = 0
 
     return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg]
 
@@ -116,8 +123,8 @@ for i, path in enumerate(path_list):
     country = csv_url.partition('/gpfs/home/schiu4/segmented_data/')[2].partition('/')[2].partition('-')[0]
     tech = csv_url.partition('/gpfs/home/schiu4/segmented_data/')[2].partition('/')[2].partition('-')[2].partition('.')[0]
 
-    local_list = network_centrality_calculation(True)
-    non_local_list = network_centrality_calculation(False)
+    local_list = network_centrality_calculation(csv_url, True)
+    non_local_list = network_centrality_calculation(csv_url, False)
 
     avg_data_df = pd.DataFrame()
     avg_data_df['country'] = [country]
@@ -133,9 +140,11 @@ for i, path in enumerate(path_list):
     avg_data_df['local_bet_centrality_avg'] = [local_list[3]]
     avg_data_df['local_page_rank_avg'] = [local_list[4]]
 
-    cumulative_df.append(avg_data_df, ignore_index=True)
+    print(avg_data_df)
+
+    cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
     if i == 10:
         break
 
-print(cumulative_df)
+cumulative_df.to_csv('/gpfs/home/schiu4/CumulativeData.csv')
