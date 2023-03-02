@@ -1,2 +1,2 @@
-country,technology,partner_count_avg,deg_centrality_avg,close_centrality_avg,bet_centrality_avg,page_rank_avg,local_partner_count_avg,local_deg_centrality_avg,local_close_centrality_avg,local_bet_centrality_avg,local_page_rank_avg
-CN,B23K,3.75,0.07978723404255318,0.08881079027355622,0.001387604070305273,0.02690605114137652,2.75,0.05851063829787234,0.06791081259166365,0.001387604070305273,0.022839380937550398
+country,technology,partner_count_avg,deg_centrality_avg,close_centrality_avg,bet_centrality_avg,page_rank_avg,local_partner_count_avg,local_deg_centrality_avg,local_close_centrality_avg,local_bet_centrality_avg,local_page_rank_avg,GMI_count,count
+CN,B23K,3.75,0.07978723404255318,0.08881079027355622,0.001387604070305273,0.02690605114137652,2.75,0.05851063829787234,0.06791081259166365,0.001387604070305273,0.022839380937550398,4,48

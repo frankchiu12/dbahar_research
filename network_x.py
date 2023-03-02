@@ -109,7 +109,6 @@ def network_centrality_calculation(local):
     else:
         data_df.to_csv(country_tech_url + '_network.csv', index=False)
 
-    # TODO: or is it just len(new_df)
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
     partner_count_avg = only_GMI_df['partner_count'].sum() / len(only_GMI_df)
@@ -118,7 +117,7 @@ def network_centrality_calculation(local):
     bet_centrality_avg = only_GMI_df['bet_centrality'].sum() / len(only_GMI_df)
     page_rank_avg = only_GMI_df['page_rank'].sum() / len(only_GMI_df)
 
-    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg]
+    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg, len(only_GMI_df), len(data_df)]
 
 local_list = network_centrality_calculation(True)
 non_local_list = network_centrality_calculation(False)
@@ -136,5 +135,7 @@ avg_data_df['local_deg_centrality_avg'] = [local_list[1]]
 avg_data_df['local_close_centrality_avg'] = [local_list[2]]
 avg_data_df['local_bet_centrality_avg'] = [local_list[3]]
 avg_data_df['local_page_rank_avg'] = [local_list[4]]
+avg_data_df['GMI_count'] = [non_local_list[5]]
+avg_data_df['count'] = [non_local_list[6]]
 
 avg_data_df.to_csv(country_tech_url + '_network_average.csv', index=False)

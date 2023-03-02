@@ -139,8 +139,6 @@ for i, path in enumerate(path_list):
     avg_data_df['local_bet_centrality_avg'] = [local_list[3]]
     avg_data_df['local_page_rank_avg'] = [local_list[4]]
 
-    print(avg_data_df)
-
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
     if i == 10:
