@@ -114,7 +114,7 @@ def network_centrality_calculation(csv_url, local):
         bet_centrality_avg = 0
         page_rank_avg = 0
 
-    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg]
+    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg, len(only_GMI_df), len(data_df)]
 
 for i, path in enumerate(path_list):
     csv_url = path
@@ -138,6 +138,8 @@ for i, path in enumerate(path_list):
     avg_data_df['local_close_centrality_avg'] = [local_list[2]]
     avg_data_df['local_bet_centrality_avg'] = [local_list[3]]
     avg_data_df['local_page_rank_avg'] = [local_list[4]]
+    avg_data_df['GMI_count'] = [non_local_list[5]]
+    avg_data_df['count'] = [non_local_list[6]]
 
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
