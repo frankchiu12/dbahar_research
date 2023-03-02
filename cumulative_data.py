@@ -99,7 +99,6 @@ def network_centrality_calculation(csv_url, local):
     data_df['page_rank'] = pr_list
     data_df['GMI1yr_prevexpabroad'] = GMI_indicator_list
 
-    # TODO: or is it just len(new_df)
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
     if len(only_GMI_df) > 0:
