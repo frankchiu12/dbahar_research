@@ -83,9 +83,9 @@ def network_centrality_calculation(local):
     plt.figure(figsize=(30,25))
     nx.draw(g, pos=nx.spiral_layout(g), node_size=100, node_color=color_list, edge_color='green', linewidths=10)
     if local:
-        plt.savefig('graph_local.png')
+        plt.savefig('network_local.png')
     else:
-        plt.savefig('graph.png')
+        plt.savefig('network.png')
 
     deg_centrality = nx.degree_centrality(g)
     close_centrality = nx.closeness_centrality(g)
