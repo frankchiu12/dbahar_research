@@ -1,9 +1,4 @@
 import pandas as pd
-import sys
-from datetime import datetime
-
-# reload(sys)
-sys.setdefaultencoding('utf8')
 
 df = pd.read_csv('/gpfs/home/schiu4/PatentsInventorsDroppedNAN.csv', dtype={'year': str, 'month': str, 'day': str, 'GMI1yr_prevexpabroad': str})
 
