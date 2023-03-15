@@ -5,7 +5,7 @@ import networkx as nx
 cumulative_df = pd.DataFrame()
 
 path_list = []
-for root, dirs, files in os.walk('/gpfs/home/schiu4/segmented_data/'):
+for root, dirs, files in os.walk('/gpfs/home/schiu4/segmented_data_final/'):
     for name in files:
         path_list.append(os.path.join(root, name))
 
