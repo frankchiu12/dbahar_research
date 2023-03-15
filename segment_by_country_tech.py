@@ -23,6 +23,7 @@ for country in df.inventor_iso2.unique():
         if decile == 0:
             country_list.append(country)
             tech_list.append(tech)
+            continue
         cut_df.to_csv('/gpfs/home/schiu4/segmented_data_final/' + country + '-' + tech + '.csv')
 
 no_GMI_df['country'] = country_list
