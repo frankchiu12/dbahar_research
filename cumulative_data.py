@@ -21,13 +21,13 @@ def network_centrality_calculation(csv_url, local):
     global_partner_list = []
     partner_count_list = []
     GMI_indicator_list = []
-    color_list = []
     deg_centrality_list = []
     close_centrality_list = []
     bet_centrality_list = []
     pr_list = []
+    decile = 0
 
-    for _, row in read_df.iterrows():
+    for i, row in read_df.iterrows():
         patent = row['patent_id']
         inventor = row['inventor_id']
         GMI_indicator = row['GMI1yr_prevexpabroad']
@@ -44,6 +44,9 @@ def network_centrality_calculation(csv_url, local):
 
         if inventor not in inventor_to_indicator:
             inventor_to_indicator[inventor] = GMI_indicator
+
+        if i == 0:
+            decile = row['decile']
 
     for inventor, patent in inventor_to_patent.items():
         if inventor not in inventor_to_partner:
@@ -75,12 +78,6 @@ def network_centrality_calculation(csv_url, local):
         for part in partner:
             g.add_node(part)
             g.add_edge(inventor, part)
-
-    for node in g:
-        if inventor_to_indicator[node] == 1:
-            color_list.append('red')
-        else:
-            color_list.append('blue')
 
     deg_centrality = nx.degree_centrality(g)
     close_centrality = nx.closeness_centrality(g)
@@ -114,7 +111,7 @@ def network_centrality_calculation(csv_url, local):
         bet_centrality_avg = 0
         page_rank_avg = 0
 
-    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg, len(only_GMI_df), len(data_df)]
+    return [partner_count_avg, deg_centrality_avg, close_centrality_avg, bet_centrality_avg, page_rank_avg, len(only_GMI_df), len(data_df), decile]
 
 for i, path in enumerate(path_list):
     csv_url = path
@@ -140,6 +137,7 @@ for i, path in enumerate(path_list):
     avg_data_df['local_page_rank_avg'] = [local_list[4]]
     avg_data_df['GMI_count'] = [non_local_list[5]]
     avg_data_df['count'] = [non_local_list[6]]
+    avg_data_df['decile'] = [non_local_list[7]]
 
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
