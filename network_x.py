@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 
-csv_url = 'CN-B23K.csv'
+csv_url = 'data/CN-B23K.csv'
 country_tech_url = csv_url.partition('.')[0]
 country = csv_url.partition('-')[0]
 tech = csv_url.partition('-')[2].partition('.')[0]
@@ -83,9 +83,9 @@ def network_centrality_calculation(local):
     plt.figure(figsize=(30,25))
     nx.draw(g, pos=nx.spiral_layout(g), node_size=100, node_color=color_list, edge_color='green', linewidths=10)
     if local:
-        plt.savefig('network_local.png')
+        plt.savefig('output/network_local.png')
     else:
-        plt.savefig('network.png')
+        plt.savefig('output/network.png')
 
     deg_centrality = nx.degree_centrality(g)
     close_centrality = nx.closeness_centrality(g)
@@ -105,9 +105,9 @@ def network_centrality_calculation(local):
     data_df['GMI1yr_prevexpabroad'] = GMI_indicator_list
 
     if local:
-        data_df.to_csv(country_tech_url + '_network_local.csv', index=False)
+        data_df.to_csv('output/' + country_tech_url + '_network_local.csv', index=False)
     else:
-        data_df.to_csv(country_tech_url + '_network.csv', index=False)
+        data_df.to_csv('output/' + country_tech_url + '_network.csv', index=False)
 
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
@@ -138,4 +138,4 @@ avg_data_df['local_page_rank_avg'] = [local_list[4]]
 avg_data_df['GMI_count'] = [non_local_list[5]]
 avg_data_df['count'] = [non_local_list[6]]
 
-avg_data_df.to_csv(country_tech_url + '_network_average.csv', index=False)
+avg_data_df.to_csv('output/' + country_tech_url + '_network_average.csv', index=False)

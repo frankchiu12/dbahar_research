@@ -4,7 +4,7 @@ import networkx as nx
 import nxviz as nv
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('CircularPlotTop5020152019.csv')
+df = pd.read_csv('data/CircularPlotTop5020152019.csv')
 
 g = nx.DiGraph()
 
