@@ -3,14 +3,3 @@ stata_to_csv -> drop_null -> convert_to_datetime -> segment_by_country_tech -> c
 # https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/sankey-diagram
 
 # https://www.python-graph-gallery.com/chord-diagram-python-chord
-
-html:
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/sankey.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-<figure class="highcharts-figure">
-  <div id="container"></div>
-</figure>
