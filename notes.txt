@@ -2,4 +2,4 @@ stata_to_csv -> drop_null -> convert_to_datetime -> segment_by_country_tech -> c
 
 # https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/sankey-diagram
 
-# https://www.python-graph-gallery.com/chord-diagram-python-chord
+# https://stackoverflow.com/questions/67961842/chord-diagram-in-python

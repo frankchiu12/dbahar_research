@@ -1,58 +1,87 @@
-import math
 import pandas as pd
-import networkx as nx
-import nxviz as nv
-import matplotlib.pyplot as plt
+import holoviews as hv
+from holoviews import opts, dim
+import math
+from bokeh.plotting import show
+
+hv.extension('bokeh')
 
 df = pd.read_csv('data/CircularPlotTop5020152019.csv')
+new_df = pd.DataFrame()
 
-g = nx.DiGraph()
+source_target_value_list = []
+source_list = []
+target_list = []
+value_list = []
 
 for _, row in df.iterrows():
-    g.add_node(row['prev_iso2'], group=_)
     if not math.isnan(row['movedAT']):
-        g.add_edge(row['prev_iso2'], 'AT', weight=row['movedAT'])
+        source_target_value_list.append((row['prev_iso2'], 'AT', row['movedAT']))
     if not math.isnan(row['movedAU']):
-        g.add_edge(row['prev_iso2'], 'AU', weight=row['movedAU'])
+        source_target_value_list.append((row['prev_iso2'], 'AU', row['movedAU']))
     if not math.isnan(row['movedCA']):
-        g.add_edge(row['prev_iso2'], 'CA', weight=row['movedCA'])
+        source_target_value_list.append((row['prev_iso2'], 'CA', row['movedCA']))
     if not math.isnan(row['movedCH']):
-        g.add_edge(row['prev_iso2'], 'CH', weight=row['movedCH'])
+        source_target_value_list.append((row['prev_iso2'], 'CH', row['movedCH']))
     if not math.isnan(row['movedCN']):
-        g.add_edge(row['prev_iso2'], 'CN', weight=row['movedCN'])
+        source_target_value_list.append((row['prev_iso2'], 'CN', row['movedCN']))
     if not math.isnan(row['movedDE']):
-        g.add_edge(row['prev_iso2'], 'DE', weight=row['movedDE'])
+        source_target_value_list.append((row['prev_iso2'], 'DE', row['movedDE']))
     if not math.isnan(row['movedFR']):
-        g.add_edge(row['prev_iso2'], 'FR', weight=row['movedFR'])
+        source_target_value_list.append((row['prev_iso2'], 'FR', row['movedFR']))
     if not math.isnan(row['movedGB']):
-        g.add_edge(row['prev_iso2'], 'GB', weight=row['movedGB'])
+        source_target_value_list.append((row['prev_iso2'], 'GB', row['movedGB']))
     if not math.isnan(row['movedHK']):
-        g.add_edge(row['prev_iso2'], 'HK', weight=row['movedHK'])
+        source_target_value_list.append((row['prev_iso2'], 'HK', row['movedHK']))
     if not math.isnan(row['movedIE']):
-        g.add_edge(row['prev_iso2'], 'IE', weight=row['movedIE'])
+        source_target_value_list.append((row['prev_iso2'], 'IE', row['movedIE']))
     if not math.isnan(row['movedIL']):
-        g.add_edge(row['prev_iso2'], 'IL', weight=row['movedIL'])
+        source_target_value_list.append((row['prev_iso2'], 'IL', row['movedIL']))
     if not math.isnan(row['movedIN']):
-        g.add_edge(row['prev_iso2'], 'IN', weight=row['movedIN'])
+        source_target_value_list.append((row['prev_iso2'], 'IN', row['movedIN']))
     if not math.isnan(row['movedJP']):
-        g.add_edge(row['prev_iso2'], 'JP', weight=row['movedJP'])
+        source_target_value_list.append((row['prev_iso2'], 'JP', row['movedJP']))
     if not math.isnan(row['movedKR']):
-        g.add_edge(row['prev_iso2'], 'KR', weight=row['movedKR'])
+        source_target_value_list.append((row['prev_iso2'], 'KR', row['movedKR']))
     if not math.isnan(row['movedNL']):
-        g.add_edge(row['prev_iso2'], 'AT', weight=row['movedAT'])
+        source_target_value_list.append((row['prev_iso2'], 'AT', row['movedAT']))
     if not math.isnan(row['movedSE']):
-        g.add_edge(row['prev_iso2'], 'SE', weight=row['movedSE'])
+        source_target_value_list.append((row['prev_iso2'], 'SE', row['movedSE']))
     if not math.isnan(row['movedSG']):
-        g.add_edge(row['prev_iso2'], 'SG', weight=row['movedSG'])
+        source_target_value_list.append((row['prev_iso2'], 'SG', row['movedSG']))
     if not math.isnan(row['movedTW']):
-        g.add_edge(row['prev_iso2'], 'TW', weight=row['movedTW'])
+        source_target_value_list.append((row['prev_iso2'], 'TW', row['movedTW']))
     if not math.isnan(row['movedUS']):
-        g.add_edge(row['prev_iso2'], 'US', weight=row['movedUS'])
+        source_target_value_list.append((row['prev_iso2'], 'US', row['movedUS']))
 
-fig = nv.circos(
-    g,
-    node_color_by="group",
-    edge_color_by="source_node_color",
-    edge_alpha_by="weight"
-)
-plt.show()
+for i, source_target_value in enumerate(source_target_value_list):
+    source_list.append(source_target_value[0])
+    target_list.append(source_target_value[1])
+    value_list.append(source_target_value[2])
+
+new_df['source'] = source_list
+new_df['target'] = target_list
+new_df['value'] = value_list
+
+node = pd.DataFrame()
+for i, value in enumerate(new_df.source.unique()):
+    _list = list(new_df[new_df['source'] == value].source.unique())
+    node = pd.concat([node, pd.DataFrame({'name':_list})], ignore_index=True)
+
+values = list(new_df.source.unique())
+d = {value: i for i, value in enumerate(values)}
+
+def str2num(s):
+    return d[s]
+
+new_df.source = new_df.source.apply(str2num)
+new_df.target = new_df.target.apply(str2num)
+
+hv.Chord(new_df)
+nodes = hv.Dataset(pd.DataFrame(node), 'index')
+
+chord = hv.Chord((new_df, nodes)).select(value=(5, None))
+chord.opts(opts.Chord(cmap='Category20', edge_cmap='Category20', edge_color=dim('target').str(), labels='name', node_color=dim('index').str()))
+chord.opts(label_text_font_size='5pt', width=800, height=800, tools=['save', 'pan', 'wheel_zoom', 'box_zoom', 'reset'])
+
+show(hv.render(chord))
