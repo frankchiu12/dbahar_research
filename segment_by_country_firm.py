@@ -3,12 +3,12 @@ import pandas as pd
 df = pd.read_csv('/gpfs/home/schiu4/PatentsInventorsTimed.csv')
 no_GMI_df = pd.DataFrame()
 country_list = []
-tech_list = []
+firm_list = []
 
 for country in df.inventor_iso2.unique():
     sub_df = df[df.inventor_iso2 == country]
-    for tech in sub_df.cpc_id.unique():
-        sub_sub_df = sub_df[sub_df.cpc_id == tech]
+    for firm in sub_df.assigneeid.unique():
+        sub_sub_df = sub_df[sub_df.assigneeid == firm]
         sub_sub_df = sub_sub_df.sort_values(by=['time'])
         cut_length = sub_sub_df.shape[0] // 10
         decile = 0
@@ -22,10 +22,10 @@ for country in df.inventor_iso2.unique():
             continue
         if decile == 0:
             country_list.append(country)
-            tech_list.append(tech)
+            firm_list.append(firm)
             continue
-        cut_df.to_csv('/gpfs/home/schiu4/segmented_data_final/' + country + '-' + tech + '.csv')
+        cut_df.to_csv('/gpfs/home/schiu4/segmented_data_firm/' + country + '-' + str(int(firm)) + '.csv')
 
 no_GMI_df['country'] = country_list
-no_GMI_df['tech'] = tech_list
-no_GMI_df.to_csv('/gpfs/home/schiu4/no_GMI_tech.csv')
+no_GMI_df['firm'] = firm_list
+no_GMI_df.to_csv('/gpfs/home/schiu4/no_GMI_firm.csv')
