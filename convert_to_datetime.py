@@ -13,6 +13,7 @@ df['GMI1yr_prevexpabroad'] = df['GMI1yr_prevexpabroad'].apply(drop_decimal)
 df = df[(df.year != '0') & (df.year != '2973') & (df.year != '9174') & (df.year != '2979') & (df.year != '2981') & (df.year != '9180')]
 df = df[df.month != '0']
 df = df[df.day != '0']
+df = df[(df.year != '2016') & (df.year != '2017') & (df.year != '2018') & (df.year != '2019') & (df.year != '2020') & (df.year != '2021') & (df.year != '2022') & (df.year != '2023')]
 
 df['time'] = df['year'] + '/' + df['month'] + '/' + df['day']
 
