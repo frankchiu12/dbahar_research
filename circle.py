@@ -82,6 +82,6 @@ nodes = hv.Dataset(pd.DataFrame(node), 'index')
 
 chord = hv.Chord((new_df, nodes)).select(value=(5, None))
 chord.opts(opts.Chord(cmap='Category20', edge_cmap='Category20', edge_color=dim('target').str(), labels='name', node_color=dim('index').str()))
-chord.opts(label_text_font_size='5pt', width=800, height=800, tools=['save', 'pan', 'wheel_zoom', 'box_zoom', 'reset'])
+chord.opts(label_text_font_size='7pt', width=1000, height=1000, tools=['save', 'pan', 'wheel_zoom', 'box_zoom', 'reset'])
 
 show(hv.render(chord))

@@ -13,7 +13,6 @@ df['GMI1yr_prevexpabroad'] = df['GMI1yr_prevexpabroad'].apply(drop_decimal)
 df = df[(df.year != '0') & (df.year <= '2015')]
 df = df[df.month != '0']
 df = df[df.day != '0']
-
 df['time'] = df['year'] + '/' + df['month'] + '/' + df['day']
 
 pd.to_datetime(df['time'], format='%Y/%m/%d')

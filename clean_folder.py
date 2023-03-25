@@ -1,6 +1,7 @@
 import os
 import shutil
 
+# TODO: '/gpfs/home/schiu4/segmented_data_firm/'
 path = '/gpfs/home/schiu4/segmented_data_tech/'
 
 for x in os.listdir(path):

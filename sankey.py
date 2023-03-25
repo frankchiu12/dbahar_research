@@ -16,8 +16,6 @@ for i, row in df.iterrows():
     else:
         dictionary[source][destination] += tot_GMIs
 
-print(dictionary)
-
 for key, value in dictionary.items():
     for sub_key, sub_value in dictionary[key].items():
         to_print_list.append([key, sub_key, sub_value])
