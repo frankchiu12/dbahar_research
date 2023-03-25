@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 
 df = pd.read_csv('/gpfs/home/schiu4/PatentsInventorsTimed.csv')
 no_GMI_df = pd.DataFrame()
@@ -10,10 +11,10 @@ for country in df.inventor_iso2.unique():
     for tech in sub_df.cpc_id.unique():
         sub_sub_df = sub_df[sub_df.cpc_id == tech]
         sub_sub_df = sub_sub_df.sort_values(by=['time'])
-        cut_length = sub_sub_df.shape[0] // 10
+        cut_length = sub_sub_df.shape[0] / 10
         decile = 0
         for i in range(10):
-            cut_df = sub_sub_df.head(cut_length * (i + 1))
+            cut_df = sub_sub_df.head(math.floor(cut_length * (i + 1)))
             if 1 in cut_df['GMI1yr_prevexpabroad'].values:
                 decile = i + 1
                 break
