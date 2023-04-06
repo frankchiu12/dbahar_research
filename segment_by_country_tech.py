@@ -6,28 +6,33 @@ no_GMI_df = pd.DataFrame()
 country_list = []
 tech_list = []
 
+# looping through country and technology
 for country in df.inventor_iso2.unique():
     sub_df = df[df.inventor_iso2 == country]
     for tech in sub_df.cpc_id.unique():
         sub_sub_df = sub_df[sub_df.cpc_id == tech]
+        # sort
         sub_sub_df = sub_sub_df.sort_values(by=['time'], ignore_index=True)
-        unique_patent_df = sub_sub_df.drop_duplicates(subset='patent_id', keep='first', inplace=False)
+        # df of the first unique patents
+        unique_patent_df = sub_sub_df.drop_duplicates(subset='patent_id', keep='first', inplace=False).reset_index(drop=True)
+        # drop if the number of unique patents is less than 10
         if len(unique_patent_df) < 10:
             continue
+        # if the df of only GMIs is empty
         if len(sub_sub_df[sub_sub_df.GMI1yr_prevexpabroad == 1]) == 0:
             country_list.append(country)
             tech_list.append(tech)
             continue
-        first_patent = sub_sub_df[sub_sub_df.GMI1yr_prevexpabroad == 1].iloc[0]['patent_id']
-        index = int(df.index[df.patent_id == first_patent][0])
+        # first patent with GMI
+        first_GMI_patent = sub_sub_df[sub_sub_df.GMI1yr_prevexpabroad == 1].iloc[0]['patent_id']
+        # index of first_GMI_patent in unique_patent_df
+        index = int(unique_patent_df.index[unique_patent_df.patent_id == first_GMI_patent][0])
+        # calculating the decile
         decile = math.ceil((index/len(unique_patent_df)) * 10)
-        patents_to_consider = df.head(math.ceil(decile/10 * len(unique_patent_df))).patent_id.unique()
-        patent_list = sub_sub_df.patent_id.to_list()
-        index = 0
-        for i, patent in enumerate(patent_list):
-            if patent in patents_to_consider:
-                index = i
-        cut_df = sub_sub_df.head(index + 1)
+        # patents in the decile
+        patents_to_consider = unique_patent_df.head(math.ceil(decile/10 * len(unique_patent_df))).patent_id.unique()
+        cut_df = sub_sub_df[~sub_sub_df.patent_id.isin(patents_to_consider)].reset_index()
+        cut_df['decile'] = decile
         if len(cut_df.index) == 0:
             continue
         cut_df.to_csv('/gpfs/home/schiu4/segmented_data_tech/' + country + '-' + tech + '.csv')
