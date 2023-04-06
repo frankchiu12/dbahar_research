@@ -12,9 +12,11 @@ for country in df.inventor_iso2.unique():
     for tech in sub_df.cpc_id.unique():
         sub_sub_df = sub_df[sub_df.cpc_id == tech]
         # sort
+        sub_sub_df['time'] = pd.to_datetime(sub_sub_df['time'])
         sub_sub_df = sub_sub_df.sort_values(by=['time'], ignore_index=True)
         # df of the first unique patents
         unique_patent_df = sub_sub_df.drop_duplicates(subset='patent_id', keep='first', inplace=False).reset_index(drop=True)
+        unique_patent_df = unique_patent_df.sort_values(by=['time'], ignore_index=True)
         # drop if the number of unique patents is less than 10
         if len(unique_patent_df) < 10:
             continue
@@ -29,6 +31,12 @@ for country in df.inventor_iso2.unique():
         index = int(unique_patent_df.index[unique_patent_df.patent_id == first_GMI_patent][0])
         # calculating the decile
         decile = math.ceil((index/len(unique_patent_df)) * 10)
+        if decile == 0:
+            decile = 1
+        # rewrite to separate df to do sanity check
+        unique_patent_df['first_GMI_patent'] = first_GMI_patent
+        unique_patent_df['decile'] = decile
+        unique_patent_df.to_csv('/gpfs/home/schiu4/decile_check/' + country + '-' + tech + '.csv')
         # patents in the decile
         patents_to_consider = unique_patent_df.head(math.ceil(decile/10 * len(unique_patent_df))).patent_id.unique()
         cut_df = sub_sub_df[~sub_sub_df.patent_id.isin(patents_to_consider)].reset_index()
