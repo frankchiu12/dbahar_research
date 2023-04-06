@@ -13,3 +13,5 @@ def check(step):
         df.to_csv('data/sanity_check.csv')
         print(df.index[df['GMI1yr_prevexpabroad'] == 1].tolist())
         print(len(df))
+
+check(2)
