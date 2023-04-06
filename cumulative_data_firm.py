@@ -117,14 +117,14 @@ for i, path in enumerate(path_list):
     csv_url = path
     country_firm_url = csv_url.partition('/gpfs/home/schiu4/segmented_data_firm/')[2].partition('/')[2].partition('.')[0]
     country = csv_url.partition('/gpfs/home/schiu4/segmented_data_firm/')[2].partition('/')[2].partition('-')[0]
-    firm = csv_url.partition('/gpfs/home/schiu4/segmented_data_firm/')[2].partition('/')[2].partition('-')[2].partition('.')[0]
+    tech = csv_url.partition('/gpfs/home/schiu4/segmented_data_firm/')[2].partition('/')[2].partition('-')[2].partition('.')[0]
 
     local_list = network_centrality_calculation(csv_url, True)
     non_local_list = network_centrality_calculation(csv_url, False)
 
     avg_data_df = pd.DataFrame()
     avg_data_df['country'] = [country]
-    avg_data_df['firm'] = [firm]
+    avg_data_df['tech'] = [tech]
     avg_data_df['partner_count_avg'] = [non_local_list[0]]
     avg_data_df['deg_centrality_avg'] =[non_local_list[1]]
     avg_data_df['close_centrality_avg'] = [non_local_list[2]]

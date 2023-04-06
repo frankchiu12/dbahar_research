@@ -5,7 +5,7 @@ import networkx as nx
 cumulative_df = pd.DataFrame()
 
 path_list = []
-for root, dirs, files in os.walk('/gpfs/home/schiu4/segmented_data_tech/'):
+for root, dirs, files in os.walk('/gpfs/home/schiu4/segmented_data_patent/'):
     for name in files:
         path_list.append(os.path.join(root, name))
 
@@ -115,9 +115,9 @@ def network_centrality_calculation(csv_url, local):
 
 for i, path in enumerate(path_list):
     csv_url = path
-    country_tech_url = csv_url.partition('/gpfs/home/schiu4/segmented_data_tech/')[2].partition('/')[2].partition('.')[0]
-    country = csv_url.partition('/gpfs/home/schiu4/segmented_data_tech/')[2].partition('/')[2].partition('-')[0]
-    tech = csv_url.partition('/gpfs/home/schiu4/segmented_data_tech/')[2].partition('/')[2].partition('-')[2].partition('.')[0]
+    country_tech_url = csv_url.partition('/gpfs/home/schiu4/segmented_data_patent/')[2].partition('/')[2].partition('.')[0]
+    country = csv_url.partition('/gpfs/home/schiu4/segmented_data_patent/')[2].partition('/')[2].partition('-')[0]
+    tech = csv_url.partition('/gpfs/home/schiu4/segmented_data_patent/')[2].partition('/')[2].partition('-')[2].partition('.')[0]
 
     local_list = network_centrality_calculation(csv_url, True)
     non_local_list = network_centrality_calculation(csv_url, False)
@@ -141,4 +141,4 @@ for i, path in enumerate(path_list):
 
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
-cumulative_df.to_csv('/gpfs/home/schiu4/CumulativeDataTech.csv')
+cumulative_df.to_csv('/gpfs/home/schiu4/CumulativeDataPatent.csv')

@@ -39,12 +39,12 @@ for country in df.inventor_iso2.unique():
         unique_patent_df.to_csv('/gpfs/home/schiu4/decile_check/' + country + '-' + tech + '.csv')
         # patents in the decile
         patents_to_consider = unique_patent_df.head(math.ceil(decile/10 * len(unique_patent_df))).patent_id.unique()
-        cut_df = sub_sub_df[~sub_sub_df.patent_id.isin(patents_to_consider)].reset_index()
+        cut_df = sub_sub_df[sub_sub_df.patent_id.isin(patents_to_consider)].reset_index()
         cut_df['decile'] = decile
         if len(cut_df.index) == 0:
             continue
-        cut_df.to_csv('/gpfs/home/schiu4/segmented_data_tech/' + country + '-' + tech + '.csv')
+        cut_df.to_csv('/gpfs/home/schiu4/segmented_data_patent/' + country + '-' + tech + '.csv')
 
 no_GMI_df['country'] = country_list
 no_GMI_df['tech'] = tech_list
-no_GMI_df.to_csv('/gpfs/home/schiu4/no_GMI_tech.csv')
+no_GMI_df.to_csv('/gpfs/home/schiu4/no_GMI_patent.csv')
