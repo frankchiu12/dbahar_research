@@ -15,8 +15,6 @@ df = df[df.month != '0']
 df = df[df.day != '0']
 df['time'] = df['year'] + '/' + df['month'] + '/' + df['day']
 
-pd.to_datetime(df['time'], format='%Y/%m/%d')
-
 df = df.drop(['year', 'month', 'day', 'Unnamed: 0.1', 'Unnamed: 0'], axis=1)
 
 df.to_csv('/gpfs/home/schiu4/PatentsInventorsTimed.csv', index=False)

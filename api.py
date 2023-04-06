@@ -1,6 +1,5 @@
 # The current version of the PatentsView API delivers data on patents granted through September 30, 2021.
 # 55BfVeBf.wTgKzKmlZb3fjZhBlDtLllhqBcbE6TRH
-# https://patentsview.org/apis/api-query-language
 
 import requests
 base_url = 'https://api.patentsview.org/patents/query?q='
