@@ -1,1 +1,3 @@
 stata_to_csv -> drop_null -> convert_to_datetime -> segment_by_patent -> clean_folder -> cumulative_data_patent
+
+https://plotly.com/python/
