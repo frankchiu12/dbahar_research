@@ -1,7 +1,7 @@
 import os
 import shutil
 
-path = '/gpfs/home/schiu4/segmented_data_patent/'
+path = '/gpfs/home/schiu4/segmented_data_patent_decile/'
 
 for x in os.listdir(path):
     file = os.path.join(path, x)
