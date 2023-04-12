@@ -21,6 +21,7 @@ for country in df.inventor_iso2.unique():
         cut_df['decile'] = decile
         if len(cut_df.index) == 0:
             continue
+        cut_df = cut_df.dropna()
         cut_df = cut_df.drop(['index'], axis=1)
         cut_df.to_csv('/gpfs/home/schiu4/segmented_data_firm_decile/' + country + '-' + tech + '.csv')
 
