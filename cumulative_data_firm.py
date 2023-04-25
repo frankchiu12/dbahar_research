@@ -141,9 +141,4 @@ for i, path in enumerate(path_list):
 
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
 
-    if i == 9:
-        break
-
-    print(i)
-
 cumulative_df.to_csv('/gpfs/home/schiu4/CumulativeDataFirm.csv')

@@ -17,7 +17,7 @@ for country in df.inventor_iso2.unique():
             continue
         decile = sub_sub_df[sub_sub_df.GMI1yr_prevexpabroad == 1].iloc[0]['pt_patents_10']
         firms_to_consider = sub_sub_df[sub_sub_df.pt_patents_10 == decile].assigneeid.unique()
-        cut_df = sub_sub_df[sub_sub_df.assigneeid.isin(firms_to_consider)].reset_index()
+        cut_df = sub_sub_df[(sub_sub_df.assigneeid.isin(firms_to_consider)) & (sub_sub_df.pt_patents_10 == decile)].reset_index()
         cut_df['decile'] = decile
         if len(cut_df.index) == 0:
             continue
