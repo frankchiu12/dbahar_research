@@ -1,3 +1,5 @@
+# this script uses pycirclize to make circle_50.png
+
 import pandas as pd
 from pycirclize import Circos
 from pycirclize.parser import Matrix
@@ -11,6 +13,7 @@ source_list = []
 target_list = []
 value_list = []
 
+# create lists of tuples from the source to the target
 for _, row in data_df.iterrows():
     if not math.isnan(row['movedAT']):
         source_target_value_list.append((row['prev_iso2'], 'AT', row['movedAT']))
@@ -51,15 +54,18 @@ for _, row in data_df.iterrows():
     if not math.isnan(row['movedUS']):
         source_target_value_list.append((row['prev_iso2'], 'US', row['movedUS']))
 
+# create separate lists of the sources, targets, and values (how many immigrants)
 for i, source_target_value in enumerate(source_target_value_list):
     source_list.append(source_target_value[0])
     target_list.append(source_target_value[1])
     value_list.append(source_target_value[2])
 
+# make a df of the lists
 matrix_df['source'] = source_list
 matrix_df['target'] = target_list
 matrix_df['value'] = value_list
 
+# https://moshi4.github.io/pyCirclize/chord_diagram/
 matrix = Matrix.parse_fromto_table(matrix_df)
 
 circos = Circos.initialize_from_matrix(

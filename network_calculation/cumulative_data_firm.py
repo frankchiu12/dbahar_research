@@ -1,3 +1,5 @@
+# comments the same as cumulative_data_patent
+
 import os
 import pandas as pd
 import networkx as nx
