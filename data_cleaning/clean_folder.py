@@ -1,3 +1,5 @@
+# this script organizes the folder by creating folders for each country and moving relevant files into these folders
+
 import os
 import shutil
 
