@@ -28,5 +28,5 @@ term = 'restaurants'
 location = 'San Francisco, CA'
 
 result = search_businesses(api_key, term, location)
-with open('yelp_results.json', 'w') as file:
+with open('yelp_result.json', 'w') as file:
     json.dump(result, file, indent=4)
