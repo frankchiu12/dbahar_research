@@ -1,4 +1,5 @@
-# comments the same as cumulative_data_patent
+# this script culculates centrality measures for firms
+# comments the same as cumulative_data_patent.py
 
 import os
 import pandas as pd

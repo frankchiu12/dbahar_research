@@ -1,9 +1,13 @@
+# this script culculates centrality measures for patents
+
 import os
 import pandas as pd
+# library used
 import networkx as nx
 
 cumulative_df = pd.DataFrame()
 
+# make a lists of the paths to the data files
 path_list = []
 for root, dirs, files in os.walk('/gpfs/home/schiu4/segmented_data_patent_decile/'):
     for name in files:
@@ -13,6 +17,7 @@ def network_centrality_calculation(csv_url, local):
     read_df = pd.read_csv(csv_url)
     data_df = pd.DataFrame()
 
+    # dictionary of patents to inventors, inventors to patents, inventors to their partners, and inventors to the GMI indicator variable
     patent_to_inventor = {}
     inventor_to_patent = {}
     inventor_to_partner = {}
@@ -27,11 +32,13 @@ def network_centrality_calculation(csv_url, local):
     pr_list = []
     decile = 0
 
+    # loop through the df data
     for i, row in read_df.iterrows():
         patent = row['patent_id']
         inventor = row['inventor_id']
         GMI_indicator = row['GMI1yr_prevexpabroad']
 
+        # construct the patent_to_inventor, inventor_to_patent, and inventor_to_indicator dictionaries
         if patent not in patent_to_inventor:
             patent_to_inventor[patent] = [inventor]
         else:
@@ -48,6 +55,7 @@ def network_centrality_calculation(csv_url, local):
         if i == 0:
             decile = row['decile']
 
+    # construct the patent_to_partner dictionary
     for inventor, patent in inventor_to_patent.items():
         if inventor not in inventor_to_partner:
             inventor_to_partner[inventor] = []
@@ -58,6 +66,7 @@ def network_centrality_calculation(csv_url, local):
 
     for inventor, partner in inventor_to_partner.items():
         unique_partner_list = list(set(partner))
+        # if we are calculating local centrality, we remove partners that are GMIs from the list
         if local:
             inventor_to_partner[inventor] = [x for x in unique_partner_list if inventor_to_indicator[x] != 1]
         else:
@@ -71,6 +80,7 @@ def network_centrality_calculation(csv_url, local):
     data_df['partner_list'] = global_partner_list
     data_df['partner_count'] = partner_count_list
 
+    # use networkx to calculate centralities
     g = nx.Graph()
 
     for inventor, partner in inventor_to_partner.items():
@@ -96,6 +106,7 @@ def network_centrality_calculation(csv_url, local):
     data_df['page_rank'] = pr_list
     data_df['GMI1yr_prevexpabroad'] = GMI_indicator_list
 
+    # calculate average centrality measures for only GMIs
     only_GMI_df = data_df.copy()
     only_GMI_df = only_GMI_df[only_GMI_df.GMI1yr_prevexpabroad == 1]
     if len(only_GMI_df) > 0:
@@ -140,7 +151,5 @@ for i, path in enumerate(path_list):
     avg_data_df['decile'] = [non_local_list[7]]
 
     cumulative_df = cumulative_df.append(avg_data_df, ignore_index=True)
-
-    print(i)
 
 cumulative_df.to_csv('/gpfs/home/schiu4/CumulativeDataPatent.csv')
