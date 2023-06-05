@@ -23,10 +23,23 @@ def search_businesses(api_key, term, location):
 
     return data
 
+def get_reviews(api_key, business_id):
+    headers = {
+        "Authorization": f"Bearer {api_key}"
+    }
+    url = f'https://api.yelp.com/v3/businesses/{business_id}/reviews'
+    response = requests.get(url, headers=headers)
+    data = response.json()
+    return data
+
 api_key = os.getenv('API_KEY')
 term = 'restaurants'
 location = 'San Francisco, CA'
 
-result = search_businesses(api_key, term, location)
-with open('yelp_result.json', 'w') as file:
-    json.dump(result, file, indent=4)
+result_1 = search_businesses(api_key, term, location)
+result_2 = get_reviews(api_key, 'KdH4w6BAc9ckVNZpyd4xWg')
+
+with open('yelp_result_1.json', 'w') as file:
+    json.dump(result_1, file, indent=4)
+with open('yelp_result_2.json', 'w') as file:
+    json.dump(result_2, file, indent=4)
