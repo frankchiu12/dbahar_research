@@ -1,6 +1,7 @@
 import json
 import requests
 import pandas as pd
+import time
 
 BASE_URL = "https://api.humantic.ai/v1/user-profile/create"
 headers = {
@@ -15,6 +16,9 @@ df = df.groupby('directorname')['string_agg'].sum().reset_index()
 df.to_csv('personality_step_1.csv')
 
 for index, row in df.iterrows():
+    if index % 20 == 0:
+        time.sleep(180)
+
     USER_ID = row['directorname']
     url = f"{BASE_URL}?apikey={API_KEY}&userid={USER_ID}"
     data = {'text': row['string_agg']}
@@ -23,5 +27,4 @@ for index, row in df.iterrows():
     response = requests.request("POST", url, data=payload, headers=headers)
     print(response.status_code, response.text)
 
-    if index == 10:
-        break
+    print(index, USER_ID)
