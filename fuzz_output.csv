@@ -1,0 +1,340 @@
+Ultimate.Company,Company_N,DUNS Number,Matched bizname,fuzzy_output,fuzz_score
+Johnson & Johnson,324,1307081.0,Johnson & Johnson,100.0,100.0
+Jim Beam Brands,322,5121447.0,"Jim Beam Brands Co., Inc.",75.0,75.0
+Molson Coors Brewing,399,7057342.0,Molson Coors Brewing Company,83.0,83.0
+Wal-Mart,657,51957769.0,"Wal-Mart Stores, Inc.",55.0,55.0
+General Mills,251,6250740.0,"General Mills, Inc.",81.0,81.0
+The Coca-Cola Company,581,3296175.0,The Coca-Cola Company,100.0,100.0
+Colgate-Palmolive,149,275580871.0,COLGATE-PALMOLIVE,100.0,100.0
+La Mariposa,345,433486300.0,LA MARIPOSA SRL,85.0,85.0
+Feelgood,233,261862199.0,FEELGOOD,100.0,100.0
+Edgewell Personal Care,210,260162641.0,L&C,16.0,16.0
+Traditional Medicinals,611,260679952.0,MEDI,31.0,31.0
+Starbucks Coffee,546,267151483.0,STARBUCKS COFFEE FRANCE,82.0,82.0
+Old Orchard Brands,437,260488095.0,D.B,19.0,19.0
+Abbott Laboratories,4,1307602.0,Abbott Laboratories,100.0,100.0
+Nice Pak Products,428,3778198.0,"Nice-Pak Products, Inc.",80.0,80.0
+Prestige Cosmetics,476,39651344.0,Prestige Cosmetics Corporation,75.0,75.0
+Purity Cosmetics,484,573633927.0,SME,32.0,32.0
+JBS,321,16619637.0,"Jbs United, Inc.",32.0,32.0
+Bristol-Myers Squibb,111,275352607.0,BRISTOL MYERS SQUIBB,95.0,95.0
+Viacom International,647,787090617.0,Viacom International Inc.,89.0,89.0
+WD-40 Company,659,8232449.0,WD-40 Company,100.0,100.0
+Taylor Fresh Foods,576,506747062.0,Taylor & Taylor,55.0,55.0
+Clif Bar & Company,143,261188674.0,MPA,29.0,29.0
+Johnsonville Sausage,325,42619932.0,"Johnsonville Sausage, LLC",89.0,89.0
+Costco Wholesale,165,770147049.0,COSTCO WHOLESALE UK LTD,82.0,82.0
+American Italian Pasta Company,34,160899605.0,American Italian Pasta Company,100.0,100.0
+Amy's Kitchen,47,194962577.0,Amy's Kitchen Inc,87.0,87.0
+John B. Sanfilippo & Son,323,25293481.0,"John B. Sanfilippo & Son, Inc.",89.0,89.0
+E & J Gallo Winery,204,9200056.0,E. & J. Gallo Winery,95.0,95.0
+Creative Marketing,167,692640972.0,MARKETING CREATIVE CORP.,48.0,48.0
+C&S Wholesale Grocers,115,1842467.0,"C&S Wholesale Grocers, Inc.",88.0,88.0
+General Nutrition Corporation - GNC,252,14960165.0,General Nutrition Corporation,91.0,91.0
+TCCD International,577,4026821.0,Etc International,91.0,91.0
+Wang Globalnet,658,15059967.0,Wang Globalnet,100.0,100.0
+The Sun Products Corporation,600,70931480.0,The Sun Products Corporation,100.0,100.0
+Constellation Brands,159,59651117.0,"Constellation Brands, Inc.",87.0,87.0
+Alfa Vitamins Laboratories,26,274874564.0,ALFA,27.0,27.0
+Fresherized Foods,245,262200499.0,D.F.,19.0,19.0
+Bush Brothers & Company,114,3377538.0,Bush Brothers & Company,100.0,100.0
+Otis Spunkmeyer,446,275153476.0,OTIS,42.0,42.0
+Select Pet Products,518,262559342.0,PRO,27.0,27.0
+Willert Home Products,665,6289680.0,"Willert Home Products, Inc.",88.0,88.0
+Sunshine International,557,61640459.0,Sunshine International Corp,90.0,90.0
+Petco Animal Supplies,465,28364727.0,"Petco Animal Supplies, Inc.",88.0,88.0
+Tender Corporation,579,64437304.0,Tender Corporation,100.0,100.0
+Natural Polymer International Corporation,415,,,,
+Reynolds Consumer Products,500,6126387.0,Reynolds Consumer Products Inc,93.0,93.0
+Transnational Foods,612,261569392.0,NATI,35.0,35.0
+Monarch International,402,650069123.0,MONARCH INTERNATIONAL,100.0,100.0
+Kroger,340,278117122.0,ROGER,91.0,91.0
+Beaver Street Fisheries,87,4079364.0,"Beaver Street Fisheries, Inc.",88.0,88.0
+Ames International,43,915335439.0,AMBE INTERNATIONAL,94.0,94.0
+NeilMed Pharmaceuticals,420,783557783.0,Neilmed Pharmaceuticals Inc,92.0,92.0
+Barhyte Specialty Foods,82,261596999.0,ARH,23.0,23.0
+Australis Aquaculture,72,390905961.0,ALI,25.0,25.0
+International Flavours & Fragrances,304,590142485.0,INTERNATIONAL FLAVOURS & FRAGRANCES (NZ) LIMITED,84.0,84.0
+Keurig Green Mountain,330,266431225.0,REEN,32.0,32.0
+Doskocil Manufacturing Company,197,8031015.0,"Doskocil Manufacturing Company, Inc.",91.0,91.0
+Wei-Chuan USA,661,64596620.0,"WEI Chuan Usa, Inc.",75.0,75.0
+American Eagle Outfitters,32,834469876.0,"American Eagle Outfitters, Inc.",89.0,89.0
+Haddon House Food Products,270,1949916.0,"Haddon House Food Products, Inc.",90.0,90.0
+First American Brands,236,93753502.0,"First American Brands, Inc.",88.0,88.0
+Victory International,649,927574066.0,Victory International,100.0,100.0
+Atlantic Capes Fisheries,66,119210656.0,"Atlantic Capes Fisheries, Inc.",89.0,89.0
+Premier Brands of America,475,261983020.0,MERI,28.0,28.0
+Schulze & Burch Biscuit,516,5105960.0,Schulze and Burch Biscuit Co,86.0,86.0
+4C Foods,1,261776594.0,4C,40.0,40.0
+Mcllhenny Company,383,8158396.0,McIlhenny Company,94.0,94.0
+La Terra Fina,346,263318292.0,A-F,25.0,25.0
+American Trading International,41,261569392.0,NATI,24.0,24.0
+Promotion In Motion,479,49314511.0,"Promotion In Motion, Inc",88.0,88.0
+Allegro Coffee Company,27,261188674.0,MPA,24.0,24.0
+The Folger Coffee Company,584,4273710.0,The Folger Coffee Company,100.0,100.0
+Whole Foods Market,663,93735686.0,"Whole Foods Market, Inc.",86.0,86.0
+American Consumer Products,31,261983020.0,MERI,27.0,27.0
+Innovation Ventures,297,169417735.0,"Innovation Ventures, LLC",88.0,88.0
+Associated Wholesale Grocers,63,6943062.0,"Associated Wholesale Grocers, Inc.",90.0,90.0
+Cosmopolitan Food Group,164,291265630.0,TAN,23.0,23.0
+Livingston International,358,201575438.0,Livingston International Inc,92.0,92.0
+Rite Aid,502,799460274.0,"Rite Aid Drug Palace, Inc.",47.0,47.0
+Presto Absorbent Products,477,278293175.0,PRESTO,39.0,39.0
+Forest Laboratories,241,1288281.0,"Forest Laboratories, Inc.",86.0,86.0
+Grassland Dairy Products,263,6080204.0,"Grassland Dairy Products, Inc.",89.0,89.0
+The Vitamin Shoppe,601,261406786.0,VIT,29.0,29.0
+Pacific World Corporation,454,89693097.0,Pacific World Corporation,100.0,100.0
+Ocean Beauty Seafoods,434,9248071.0,Ocean Beauty Seafoods LLC,91.0,91.0
+Ann's House of Nuts,49,40534570.0,"Ann's House of Nuts, Inc.",86.0,86.0
+Vital Pharmaceuticals,651,233186936.0,Ace,25.0,25.0
+USANA Health Sciences,643,804413250.0,"Usana Health Sciences, Inc.",88.0,88.0
+Dorel Juvenile Group,196,118841501.0,"Dorel Juvenile Group, Inc.",87.0,87.0
+Aura,71,265278650.0,AURA,100.0,100.0
+Community Pharmacy,154,24356636.0,Community Pharmacy Inc,90.0,90.0
+Euro-American Brands,221,261983020.0,MERI,33.0,33.0
+One World Enterprises,440,716294137.0,NEW WORLD ENTERPRISE,93.0,93.0
+Tony Chachere's Creole Foods,610,265031872.0,EOLE,25.0,25.0
+Tribe Mediterranean Foods,619,260679952.0,MEDI,28.0,28.0
+Bay Valley Foods,84,6127708.0,"Bay Valley Foods, LLC",86.0,86.0
+Neurobrands,422,383011749.0,BR,31.0,31.0
+International Marketing Systems,308,174823740.0,International Marketing Systems Ltd.,93.0,93.0
+Orion Seafood International,443,605784263.0,"Orion Seafood International, Inc.",90.0,90.0
+Mueller Sports Medicine,405,260679952.0,MEDI,30.0,30.0
+Langer Juice Company,348,225157627.0,Ice,26.0,26.0
+World Centric,668,293188327.0,CEN,38.0,38.0
+Ouidad,447,264098331.0,IDA,67.0,67.0
+Bell Flavors & Fragrances,89,47906342.0,"Bell Flavors and Fragrances, Inc.",83.0,83.0
+United Natural Foods,635,943556183.0,"United Natural Foods, Inc.",87.0,87.0
+Simply 7 Snacks,528,261773356.0,MPL,33.0,33.0
+Universal Beauty Products,641,262297801.0,BEAUTY,39.0,39.0
+Hidden Valley Farms,282,260009783.0,VAL,27.0,27.0
+Trinity Industries,621,7324254.0,"Trinity Industries, Inc.",86.0,86.0
+Sweet Street Desserts,564,9139676.0,"Sweet Street Desserts, Inc.",88.0,88.0
+Abercrombie & Fitch,6,38163168.0,Abercrombie & Fitch Co.,90.0,90.0
+Market America,371,797412236.0,"Market America, Inc.",82.0,82.0
+Taco Bell Corp,571,9657149.0,Taco Bell Corp,100.0,100.0
+Specialty Food Distribution,541,291964794.0,ECIA,26.0,26.0
+United Medical Devices,634,225157627.0,Ice,24.0,24.0
+Avlon Industries,75,289275914.0,IES,32.0,32.0
+Daniele International,178,261569392.0,NATI,32.0,32.0
+Monterey Gourmet Foods,404,268149833.0,TER,24.0,24.0
+Dawn Food Products,180,826761207.0,"Dawn Food Products, Inc.",86.0,86.0
+IMG,295,650266559.0,IMG,100.0,100.0
+Breton Enterprises,110,45342227.0,Brown Enterprises,91.0,91.0
+Steifel Laboratories,548,261725273.0,STE,26.0,26.0
+American Natural & Organic Spices,35,267209877.0,MERIC,26.0,26.0
+Clougherty Packing,145,8287534.0,"Clougherty Packing, LLC",88.0,88.0
+Damascus Bakery,176,262373393.0,MAS,33.0,33.0
+The Florida Brewery,583,262005923.0,FLORIDA,54.0,54.0
+Amrita Aromatherapy,45,260877701.0,ROMA,35.0,35.0
+Dermatologic Cosmetic Laboratories,188,55359970.0,Dermatologic Cosmetic Laboratories Ltd.,93.0,93.0
+AdvancePierre Foods,17,48465686.0,"Advancepierre Foods, Inc.",86.0,86.0
+Fuji Food Products,248,4608936.0,"Fuji Food Products, Inc.",86.0,86.0
+Modern International,397,194043659.0,Golden International,90.0,90.0
+American Premier Products,39,261983020.0,MERI,28.0,28.0
+Delivra,185,477435080.0,DELIVRA SL,82.0,82.0
+Dairiconcepts,173,157873659.0,"Dairiconcepts, LP",87.0,87.0
+High Ridge Brands,283,531294830.0,RAN,30.0,30.0
+Dancing Deer Baking Co.,177,262211869.0,DAN,23.0,23.0
+VOV Inc.,655,,,,
+Lippmann Enterprises,355,260143203.0,PPM,26.0,26.0
+Del Monte Foods,183,285744244.0,NT,24.0,24.0
+Ainsworth Pet Nutrition,20,68730027.0,"Ainsworth Pet Nutrition, Inc.",88.0,88.0
+Wai Lana Productions,656,137545146.0,Lana Wai Productions LLC,73.0,73.0
+Village Farms,650,930691592.0,Village Farms L P,87.0,87.0
+Intermix,301,88251686.0,Intermix Manufacturing LLC,47.0,47.0
+Alfa Scientific Designs,25,260514122.0,A.S,15.0,15.0
+Derm Cosmetics Labs,187,262631356.0,M.C.,17.0,17.0
+National Pasteurized Eggs,410,261569392.0,NATI,28.0,28.0
+Atlantic Essential Products,67,273899773.0,ATLA,26.0,26.0
+Dairy Farmers of America,174,29855640.0,"Dairy Farmers of America, Inc.",89.0,89.0
+CareMark,121,1338912.0,CVS Caremark Corporation,50.0,50.0
+Yucatan Foods,670,270269629.0,ATA,38.0,38.0
+Servaas Laboratories,521,289275914.0,IES,26.0,26.0
+Scents of Nature Enterprises,515,285993395.0,ISES,25.0,25.0
+Kozy Shack Enterprises,338,43190917.0,"Kozy Shack Enterprises, Inc.",88.0,88.0
+Apex Pharmaceutical,55,233186936.0,Ace,27.0,27.0
+BJ's Wholesale Club,102,159082692.0,"BJ's Wholesale Club, Inc.",86.0,86.0
+Evergreen Enterprises,226,839369857.0,"Evergreen Enterprises, Inc.",88.0,88.0
+The Green Group,588,266431225.0,REEN,42.0,42.0
+The Honest Company,592,147814735.0,The Hon Company,91.0,91.0
+Guayaki Sustainable Rainforest Products,269,396230422.0,FOREST,27.0,27.0
+Buddy's Kitchen,113,270152999.0,KI,24.0,24.0
+Ergo Solutions,218,260970799.0,EO SOLUTIONS,92.0,92.0
+Chateau International,136,622261253.0,"Chateau International, Inc",89.0,89.0
+Philips Oral Healthcare,467,260458413.0,PHI,23.0,23.0
+Natural Vitamins Laboratory,416,286042762.0,VITA,26.0,26.0
+Caribou Coffee Company,123,801222456.0,"Caribou Coffee Company, Inc.",88.0,88.0
+Clear Springs Foods,141,42834200.0,"Clear Springs Foods, Inc.",86.0,86.0
+Baxco Pharmaceutical,83,233186936.0,Ace,26.0,26.0
+Les Trois Petits Cochons,351,288779239.0,LES TROIS PETITS COCHONS,100.0,100.0
+The Pepsi Bottling Group,595,811886605.0,"The Pepsi Bottling Group México, S. de R.L. de C.V.",64.0,64.0
+Medline Industries,387,25460908.0,"Medline Industries, Inc.",86.0,86.0
+HPA,288,285236480.0,HPA,100.0,100.0
+Ultradent Products,629,260414012.0,ADE,29.0,29.0
+First Quality Products,238,198602195.0,"First Quality Products, Inc",90.0,90.0
+Frank Lin Distillers Products,244,9137514.0,"Frank-Lin Distillers Products, Ltd.",88.0,88.0
+Straus Family Creamery,551,274685762.0,AME,24.0,24.0
+Anthony Brands,53,262614374.0,ANTHONY,67.0,67.0
+Sierra Nevada Cheese Company,526,281100680.0,NEVA,25.0,25.0
+National Vitamin Company,411,261569392.0,NATI,29.0,29.0
+Uinta Brewing,628,260016567.0,UINT,47.0,47.0
+Setton International Foods,522,55212575.0,"Setton's International Foods, Inc.",87.0,87.0
+Crystal Geyser Water,170,92552181.0,Crystal Geyser Water Company,83.0,83.0
+Nutrisport Pharmacal,432,260689134.0,RMA,26.0,26.0
+Bactolac Pharmaceuticals,79,296907624.0,BACT,29.0,29.0
+The Margarita King,593,261912334.0,E.M.,18.0,18.0
+Freudenburg Household Products,246,238530273.0,FREUDENBERG HOUSEHOLD PRODUCTS LP,92.0,92.0
+Palm Bay International,455,121659056.0,"Palm Bay International, Inc.",88.0,88.0
+Ecolab Inc.,208,6154611.0,Ecolab Inc.,100.0,100.0
+Paper Source Converting and Manufacturing,458,151677465.0,Source,26.0,26.0
+Lock & Lock HN,359,266984744.0,LOC +,42.0,42.0
+Royal Paper Converting,509,790264931.0,"Royal Paper Converting, Inc.",88.0,88.0
+Diamond Wipes International,190,261569392.0,NATI,26.0,26.0
+Overseas Food Trading,448,650322605.0,OVERSEAS TRADING,86.0,86.0
+American Nutrition,36,61462065.0,"American Nutrition, Inc.",86.0,86.0
+California Natural Products,118,265915798.0,LIFO,26.0,26.0
+Wegmans Food Markets,660,59650069.0,"Wegmans Food Markets, Inc.",87.0,87.0
+Nature's Sunshine Products,417,386608157.0,Nature's Sunshine Products International Distribution B.V.,62.0,62.0
+Gordon Food Service,262,6409908.0,"Gordon Food Service, Inc.",86.0,86.0
+The PictSweet Company,596,7933104.0,The Pictsweet Company,100.0,100.0
+House of Spices,287,56414584.0,"House of Spices (india), Inc.",68.0,68.0
+International Coffee & Tea,302,50125434.0,International Coffee & Tea Inc,93.0,93.0
+Tasty Baking Company,575,2266369.0,Tasty Baking Company,100.0,100.0
+Pero Family Farms Food Company,463,293774654.0,PERO,24.0,24.0
+Chocolate Printing Company,138,282658298.0,CHOCOLATE,51.0,51.0
+Euro-Pro Operating,222,144444333.0,Euro-Pro Operating LLC,90.0,90.0
+Hearthside Food Solutions,279,830353103.0,"Hearthside Food Solutions, LLC",91.0,91.0
+Physicians Formula,469,21261805.0,"Physicians Formula, Inc.",86.0,86.0
+Markwins Beauty Products,373,332614937.0,MBP Markwins Beauty Products GmbH,84.0,84.0
+Matosantos Commercial Corp.,378,90034471.0,Matosantos Commercial Corp,98.0,98.0
+International Tea Importers,310,261569392.0,NATI,26.0,26.0
+L & J General International,342,261569392.0,NATI,26.0,26.0
+Beauty Plus Global,86,262297801.0,BEAUTY,50.0,50.0
+Ghirardelli Chocolate,254,608841342.0,Ghirardelli Chocolate Co.,91.0,91.0
+United States Distilled Products,639,278808022.0,STATE,27.0,27.0
+Performance Enhancing Meat Snacks,462,398276142.0,PERFORM,35.0,35.0
+Population Service International,473,347130155.0,INTER +,26.0,26.0
+Evolution Marketing,227,260360325.0,EVOLUTION,64.0,64.0
+Pure Encapsulations,482,260279164.0,ENCA,35.0,35.0
+"America's Naturals, LLC",42,260514122.0,A.S,15.0,15.0
+Little Duck Organics,356,260787094.0,LITTLE,46.0,46.0
+CVS Pharmacy,172,176729788.0,"CVS Pharmacy, Inc.",80.0,80.0
+The Goodyear Tire & Rubber Company,586,4467924.0,The Goodyear Tire & Rubber Company,100.0,100.0
+Mighty Fine,392,260967855.0,IG,31.0,31.0
+Central Valley Cheese,130,260009783.0,VAL,25.0,25.0
+The French's Food Company,585,282237668.0,H.S.F.,19.0,19.0
+Anderson International Foods,48,261569392.0,NATI,25.0,25.0
+Antonio Mozzarella Factory,54,99260820.0,Antonio Mozzarella Factory Inc.,91.0,91.0
+Advantage Sales and Marketing,18,37996790.0,Advantage Sales & Marketing,93.0,93.0
+B&W Quality Growers,78,47965322.0,B & W Quality Growers Inc,86.0,86.0
+Akzo Nobel Functional Chemicals,21,355137027.0,Akzo Nobel Functional Chemicals AB,95.0,95.0
+Oxygen Development,449,260922818.0,OXY+,27.0,27.0
+Marlyn Nutraceuticals,374,233186936.0,Ace,25.0,25.0
+International Seafoods of Alaska,309,97821813.0,"International Seafoods of Alaska, Inc.",91.0,91.0
+The Hartz Mountain Corporation,589,58109158.0,The Hartz Mountain Corporation,100.0,100.0
+Altima Technologies,29,269851924.0,TEC,27.0,27.0
+Bio-Engineered Supplements & Nutrition,98,295268697.0,S & N,23.0,23.0
+Zoetis Inc.,671,392066010.0,ZOE,43.0,43.0
+Tadin Herb & Tea,572,281590781.0,ADI,32.0,32.0
+Raley's,489,7874472.0,Raley's,100.0,100.0
+Supreme,561,1316132.0,"Supreme Oil Company, Incorporated",35.0,35.0
+Hearst Communications,278,177913964.0,Hearst Communications Inc.,89.0,89.0
+Tierra Nueva Fine Cocoa,606,261802579.0,E&C,15.0,15.0
+Peter Cremer North America,466,92085989.0,Peter Cremer North America LP,95.0,95.0
+Unique Pretzel Bakery,631,288182178.0,RETZ,32.0,32.0
+Swift Beef Company,565,261188674.0,MPA,29.0,29.0
+The Nutro Company,594,6477400.0,The Toro Company,91.0,91.0
+Oil-Dri Corporation of America,435,5213954.0,Oil-Dri Corporation of America,100.0,100.0
+Continental Resources,160,1422583.0,"Continental Resources, Inc.",88.0,88.0
+Access Business Group LLC,9,839830713.0,Access Business Group LLC,100.0,100.0
+New Age Pharmaceuticals,423,233186936.0,Ace,23.0,23.0
+AB Diversified Enterprises,3,285993395.0,ISES,27.0,27.0
+The Hershey Company,590,3002052.0,Hershey Company,88.0,88.0
+Technochem International,578,696049928.0,TECHNO INTERNATIONAL,91.0,91.0
+Ipro,313,11488525.0,Dnipro LLC,57.0,57.0
+Nuhealth,431,271095106.0,LT,40.0,40.0
+Herbalife International,280,829446108.0,"Herbalife International, Inc.",88.0,88.0
+Roche Diabetes Care,505,262668047.0,E.D,18.0,18.0
+Specialty Products Resources,539,151677465.0,Source,35.0,35.0
+Sunny Delight Beverages,554,4074688.0,Sunny Delight Beverage Co,92.0,92.0
+Eurofresh,223,440027019.0,EUROFRESH SRL,82.0,82.0
+Ranir,493,298412052.0,R,33.0,33.0
+MVP Group International,406,43065825.0,"Mvp Group International, Inc.",88.0,88.0
+Tweezerman International,626,38150694.0,"Tweezerman International, LLC",91.0,91.0
+SFC Global Supply Chain,523,270922961.0,C.G.,15.0,15.0
+Captek Softgel International,120,261569392.0,NATI,25.0,25.0
+Lifespan,353,57400087.0,Life-Span,94.0,94.0
+Quantum Corporation,486,21195540.0,Quantum Corporation,100.0,100.0
+Social Media Interactive,532,260679952.0,MEDI,29.0,29.0
+GMC,258,395532703.0,GMC,100.0,100.0
+Coco International,147,375507928.0,Omco International,94.0,94.0
+Redbarn Pet Products,497,262559342.0,PRO,26.0,26.0
+Columbus Manufacturing,151,177751658.0,"Columbus Manufacturing, Inc.",88.0,88.0
+Mitchell Group,395,85300259.0,The Mitchell Group Inc,78.0,78.0
+Natura International,412,464431576.0,NATURA BISSE INTERNATIONAL SA,82.0,82.0
+Dynamic Technology,203,178309423.0,"Dynamic Technology, Inc.",86.0,86.0
+Dave's Killer Bread,179,231354874.0,Dave'S,48.0,48.0
+Vitane Pharmaceuticals,654,916123094.0,TANMED PHARMACEUTICALS,91.0,91.0
+Synutra International,568,261569392.0,NATI,32.0,32.0
+Lang Pharma Nutrition,347,260002919.0,ANG,25.0,25.0
+Natural American Foods,413,261983020.0,MERI,31.0,31.0
+Weight Watchers International,662,47657473.0,"Weight Watchers International, Inc.",91.0,91.0
+Bentley Laboratories,90,68351753.0,Bentley Laboratories LLC,91.0,91.0
+Luna Pharmaceuticals,366,233186936.0,Ace,26.0,26.0
+Logistics Solutions,360,215241832.0,Merthe Logistics Solutions,84.0,84.0
+Kittrich Corporation,334,92531409.0,The Kittrich Corporation,91.0,91.0
+Chantecaille Beaute,134,269851924.0,TEC,27.0,27.0
+Athena Enterprises,65,918627043.0,RATNA ENTERPRISES,91.0,91.0
+Star Brands North America,545,213062479.0,Star,28.0,28.0
+Sigvaris,527,382799534.0,SIGVARIS,100.0,100.0
+Sysco Corporation,569,51099661.0,Sysco Corporation,100.0,100.0
+Swanson Health Products,562,64780083.0,Swanson Health Products Inc,92.0,92.0
+United Pacific Industries,637,70751628.0,United Industries,81.0,81.0
+Supply Chain Solutions,560,63007314.0,"UPS Supply Chain Solutions, Inc.",81.0,81.0
+Genesis Laboratories,253,260773174.0,ENES,33.0,33.0
+Arizona Production and Packaging,57,282621080.0,ARIZONA,36.0,36.0
+Eagle Distributors,205,26651802.0,Silver Eagle Distributors Limited Partnership,57.0,57.0
+Disposable Hygiene,192,262016836.0,SPOS,36.0,36.0
+OmniActive Health Technologies,439,650226512.0,OMNIACTIVE HEALTH TECHNOLOGIES LIMITED,88.0,88.0
+Bradshaw International,107,261569392.0,NATI,31.0,31.0
+Royal Manufacturing,508,260835655.0,ACT,27.0,27.0
+Bar-S Foods,81,48804504.0,Bar-S Foods Co.,85.0,85.0
+Thibiant International,605,83913913.0,"Thibiant International, Inc.",88.0,88.0
+Red Robin International,496,48680409.0,"Red Robin International, Inc.",88.0,88.0
+Syntron Bioresearch,567,69366771.0,ARC,27.0,27.0
+Noah's Ark,429,230166196.0,Noahs Ark,95.0,95.0
+Laura Geller Beauty,349,261467878.0,LAURA,42.0,42.0
+TreeHouse Private Brands,616,298124897.0,RIVAT,34.0,34.0
+Time INC,607,714033573.0,TIME INC.,94.0,94.0
+Advanced Clinicals,14,89788079.0,Advance,56.0,56.0
+Phoenix Pharmaceuticals,468,233186936.0,Ace,23.0,23.0
+La Abuela Mexican Foods,343,262297510.0,ELA,23.0,23.0
+Associated Milk Producers,62,43225507.0,Associated Milk Producers Inc,93.0,93.0
+Beyond Better Foods,97,260488095.0,D.B,18.0,18.0
+Betabrands,94,260525604.0,AB,33.0,33.0
+Combe Incorporated,152,2406502.0,Combe Incorporated,100.0,100.0
+Hope International,286,692764996.0,HOPE INTERNATIONAL INC.,88.0,88.0
+Zotos International,672,8920605.0,"Zotos International, Inc.",86.0,86.0
+Atlantic Natural Foods,68,262437511.0,NTI,24.0,24.0
+Prime Healthcare,478,9008561.0,"Prime Healthcare, P.C.",84.0,84.0
+La Colombe Torrefaction,344,826415259.0,"La Colombe Torrefaction, Inc.",88.0,88.0
+United Exchange Corp.,633,35074756.0,Exchange Corp,76.0,76.0
+Tri Tech Laboratories,617,269851924.0,TEC,25.0,25.0
+Completely Fresh Foods,155,261773356.0,MPL,24.0,24.0
+JSP International FZC,326,383211604.0,JSP INTERNATIONAL,89.0,89.0
+First Quality Baby Products,237,292632630.0,FIRST,31.0,31.0
+The Sherwin-Williams,598,4206397.0,The Sherwin-Williams Company,83.0,83.0
+Excelcare Products,228,397688784.0,ELCARE,50.0,50.0
+Make-Up Art Cosmetics,368,573633927.0,SME,25.0,25.0
+BioELectronics Corporation,99,293323288.0,CORPO,32.0,32.0
+Hsu's Ginseng Enterprises,289,57250243.0,"Hsu's Ginseng Enterprises, Inc.",89.0,89.0
+Rio Grande Food Products,501,771843083.0,RAND,29.0,29.0
+Nest Fragrances,421,260243482.0,AGR,33.0,33.0
+Transpacific Foods,613,792621369.0,"Transpacific Foods, Inc.",86.0,86.0
+Quten Research Institute,487,266369920.0,RESEA,34.0,34.0
+Central Garden & Pet,129,9439530.0,Central Garden & Pet Company,83.0,83.0
+Treasury Wine Estates Americas,615,53251302.0,Treasury Wine Estates Americas Company,88.0,88.0
+Paramount Export Co.,460,261255148.0,EXP,26.0,26.0
+Achieve,11,6062525.0,Junior Achievement of Southeast Texas Inc,29.0,29.0
+Adare Pharmaceuticals,13,233186936.0,Ace,25.0,25.0
